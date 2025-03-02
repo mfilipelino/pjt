@@ -41,10 +41,8 @@ Repository = "https://github.com/mfilipelino/pjt"
 Issues = "https://github.com/mfilipelino/pjt/issues"
 
 [tool.setuptools]
-package-dir = {"" = "src"}
-
-[tool.setuptools.packages.find]
-where = ["src"]
+packages = ["polars_jdbc_tools"]
+package-dir = {"polars_jdbc_tools" = "src/polars_jdbc_tools"}
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -52,7 +50,7 @@ python_files = "test_*.py"
 python_functions = "test_*"
 
 [tool.ruff]
-line-length = 200
+line-length = 100
 target-version = "py38"
 fix = true
 
