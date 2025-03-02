@@ -2,49 +2,20 @@
 requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
-[project]
-name = "polars_jdbc_tools"
-version = "0.1.0"
-description = "A comprehensive toolkit for working with JDBC connections in AWS environments using Polars"
-readme = "README.md"
-requires-python = ">=3.8"
-license = {file = "LICENSE"}
-authors = [
-    {name = "mfilipelino"}
-]
-keywords = ["polars", "jdbc", "aws", "database", "sql", "glue"]
-classifiers = [
-    "Development Status :: 3 - Alpha",
-    "Intended Audience :: Developers",
-    "License :: OSI Approved :: Apache Software License",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-]
-dependencies = [
-    "boto3>=1.28.0",
-    "polars>=0.18.0",
-    "sqlalchemy>=2.0.0",
-]
+# Project metadata is now in setup.py for better compatibility
+# with direct pip install from GitHub
 
-[project.optional-dependencies]
-dev = [
-    "pytest>=7.0.0",
-    "pytest-cov>=4.0.0",
-    "ruff>=0.0.270",
-]
+[tool.ruff]
+line-length = 100
+target-version = "py38"
+fix = true
 
-[project.urls]
-Repository = "https://github.com/mfilipelino/pjt"
-Issues = "https://github.com/mfilipelino/pjt/issues"
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = []
 
-[tool.setuptools]
-packages = ["polars_jdbc_tools"]
-package-dir = {"polars_jdbc_tools" = "src/polars_jdbc_tools"}
-
-[tool.pytest.ini_options]
+[tool.ruff.lint.isort]
+known-first-party = ["polars_jdbc_tools"]
 testpaths = ["tests"]
 python_files = "test_*.py"
 python_functions = "test_*"
