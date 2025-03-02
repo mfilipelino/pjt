@@ -1,0 +1,10 @@
+line-length = 100
+target-version = "py38"
+fix = true
+
+[lint]
+select = ["E", "F", "W", "I"]
+ignore = []
+
+[lint.isort]
+known-first-party = ["polars_jdbc_tools"]
